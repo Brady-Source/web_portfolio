@@ -1,0 +1,16 @@
+Satoshi typeface — self-hosted in this project.
+
+Source: Fontshare by the Indian Type Foundry (ITF), https://www.fontshare.com/fonts/satoshi
+Font files retrieved from the Fontshare CDN (cdn.fontshare.com) via the Fontshare v2 CSS API.
+
+License: ITF Free Font License (FFL). Satoshi is offered by Fontshare free for
+personal and commercial use, including self-hosting on websites and embedding.
+See the current license terms at https://www.fontshare.com/licenses/itf-ffl
+
+The four weights bundled here (400, 500, 700, 900) are WOFF2 files that match the
+weights referenced by the Fontshare stylesheet at the time of retrieval
+(2026-07-23). If the license terms change, re-verify before redistribution.
+
+Self-hosting these files lets the site load without any external font/style
+origin, which keeps the Content-Security-Policy tight (no third-party CSS or
+font hosts required).

@@ -1,0 +1,170 @@
+{
+  "reviewMeta": {
+    "reviewer": "Portfolio build agent",
+    "reviewDate": "2026-07-23",
+    "subject": "Brady A. Finnell — AI/ML Engineer",
+    "purpose": "Curate completed, marketable work for a public portfolio targeting AI/ML engineer and full-stack developer roles.",
+    "sources": [
+      "GitHub profile: https://github.com/Brady-Source",
+      "Project upload corpus at /home/user/workspace/space_files (33 files listed by the project; 18 distinct files resolved on disk after de-duplication)",
+      "Targeted resume: brady_finnell_targeted_resume.pdf"
+    ],
+    "limitations": [
+      "OneDrive search was attempted by the main agent and returned zero indexed results, so the uploaded project corpus (space_files) was treated as the authoritative content source.",
+      "Uploaded files are private project uploads. Their storage URLs are NOT hotlinked. Only public, license-clear artifacts were copied into assets/docs.",
+      "Brady's email address appears in the resume and the original splash page but is deliberately excluded from all page markup per instructions.",
+      "Several uploaded files are duplicate uploads (e.g. -1/-2 suffixed copies) and were de-duplicated for review."
+    ],
+    "inclusionCriteria": "Substantial, completed implementations or strong technical documentation that demonstrate marketable AI/ML or full-stack skills. Excluded: generic coursework, incomplete/outdated tutorials, personal/sensitive material, and duplicates.",
+    "categories": ["Web", "AI", "Documentation"]
+  },
+  "included": [
+    {
+      "id": "rts-dqn-agents",
+      "title": "RTS Multi-Agent Deep Q-Learning (Farmers & Fighters)",
+      "category": "AI",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/rts_dqn_agents",
+      "hasCode": true,
+      "hasDemo": false,
+      "rationale": "Strongest AI project. From-scratch multi-agent DQN: custom Gymnasium-style environment, MLP Q-network, experience replay, hand-tuned reward shaping, and training curves. Directly maps to resume's 'deep reinforcement agents from scratch' and PyTorch/RL strengths. Complete, documented README with demo GIFs and license.",
+      "skills": ["Reinforcement Learning", "PyTorch", "Multi-agent RL", "Python", "Environment design"]
+    },
+    {
+      "id": "flask-advancing-ai",
+      "title": "Flask Advancing AI — Full-Stack Forum Platform",
+      "category": "Web",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/Flask-Advancing-AI",
+      "hasCode": true,
+      "hasDemo": true,
+      "demoNote": "Demo requires a database/OAuth backend; live demo action is intentionally gated behind the 'unavailable — demo' modal per portfolio spec.",
+      "rationale": "Most substantial full-stack build. Google OAuth 2.0, role-based access control, salted SHA-256 hashing, token flows, REST API, Flask-Talisman security headers, unit tests, and Docker. Demonstrates secure architecture and full-stack breadth the resume emphasizes.",
+      "skills": ["Flask", "Full-Stack", "OAuth 2.0", "RBAC", "REST API", "Security", "SQLAlchemy", "Docker", "Testing"]
+    },
+    {
+      "id": "calendar",
+      "title": "Training Management Calendar",
+      "category": "Web",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/calendar",
+      "hasCode": true,
+      "hasDemo": true,
+      "demoNote": "Requires Flask backend and database; live action gated behind demo modal.",
+      "rationale": "Complete, self-directed Flask app with auth, CRUD events, category/section filtering, FullCalendar frontend, and CSV/PDF export (WeasyPrint). Shows practical full-stack product thinking and data export — relevant to enterprise workflow/tooling roles.",
+      "skills": ["Flask", "SQLAlchemy", "FullCalendar", "Data export", "PDF/CSV", "Full-Stack"]
+    },
+    {
+      "id": "m2s-mental-health",
+      "title": "Marine Mental Strength (M2S) — AI Triage System Design",
+      "category": "Documentation",
+      "source": "Upload corpus (CSCI381 ML)",
+      "url": null,
+      "localAsset": "assets/docs/m2s-ai-triage-design.pdf",
+      "hasCode": false,
+      "hasDemo": false,
+      "rationale": "INCLUDED WITH CARE. This is an academic ML system-design report (a use-case proposal, not a deployed clinical product and not real patient data). It is technically strong: RAG with a dual-encoder bi-transformer retriever, reranker, metadata filtering, a MentalBERT safety governor, HIPAA Safe Harbor de-identification, NER PII/PHI scrubbing, and a full system architecture diagram. It demonstrates responsible-AI, privacy, and ML system-design skill. Presented as an academic design proposal with explicit framing; no individuals are identified, no sensitive personal data is present, and the topic is handled professionally. This satisfies the instruction to include the USMC mental-health project only if professionally appropriate, anonymized, and technically strong.",
+      "skills": ["RAG", "LLM systems", "Responsible AI", "HIPAA/privacy", "Transformers", "System architecture", "PyTorch"]
+    },
+    {
+      "id": "shopsphere-db",
+      "title": "ShopSphere — Scalable Database Architecture (CSCI360)",
+      "category": "Documentation",
+      "source": "Upload corpus (CSCI360 Database Dev)",
+      "url": null,
+      "localAsset": null,
+      "viewer": "doc (scrollable, non-editable text summary)",
+      "hasCode": false,
+      "hasDemo": false,
+      "rationale": "Included as a documentation artifact. Complete, well-argued database-systems design (ShopSphere e-commerce): snowflake warehouse schema, ETL, PostgreSQL row-level concurrency control, parameterized-query API, RBAC + SSL/TLS + hashing, and a distributed horizontal-scaling plan. Backs the resume's PostgreSQL/MySQL/SQLite database-design claims. Note: the project files list a separate 'Database Diagram.pdf', but that file did not resolve on disk in space_files — only the description docx and queries xlsx were present. To avoid fabricating a missing asset, the project is presented as a scrollable, non-editable text summary (built with textContent) rather than an embedded PDF. This satisfies the wireframe's 'Word document: non-editable scrollable window' behavior.",
+      "skills": ["Database design", "SQL", "ERD", "Data modeling"]
+    }
+  ],
+  "excluded": [
+    {
+      "id": "asteroids",
+      "title": "Asteroids (Pygame)",
+      "category": "Web/Game",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/Asteroids",
+      "reason": "Boot.dev guided tutorial project with an empty README; learning exercise rather than an original, marketable build. Excluded to keep the portfolio focused on substantial work."
+    },
+    {
+      "id": "blog",
+      "title": "Flask Blog/To-Do",
+      "category": "Web",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/blog",
+      "reason": "Small learning project ('made while learning Flask', CSCI325 week 7). Superseded by the far more substantial Flask-Advancing-AI and calendar apps. Excluded as introductory coursework."
+    },
+    {
+      "id": "flask-tut",
+      "title": "Flask Tutorial",
+      "category": "Web",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/Flask_Tut",
+      "reason": "Explicitly a 'School Tutorial' follow-along; not original work. Excluded."
+    },
+    {
+      "id": "webflyx",
+      "title": "webflyx",
+      "category": "Other",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/webflyx",
+      "reason": "Described as 'git training repo'; no substantive project content. Excluded."
+    },
+    {
+      "id": "web_portfolio",
+      "title": "web_portfolio",
+      "category": "Web",
+      "source": "GitHub",
+      "url": "https://github.com/Brady-Source/web_portfolio",
+      "reason": "This is the destination repository for this very site (contains only a LICENSE at review time). Not a portfolio item."
+    },
+    {
+      "id": "llm-analysis",
+      "title": "Analysis of Current LLMs (CSCI484)",
+      "category": "Documentation",
+      "source": "Upload corpus",
+      "url": null,
+      "reason": "Course essay analyzing then-current LLMs. Time-sensitive product claims would date quickly and conflict with the site's 'no time-sensitive model claims' rule. Excluded to avoid stale content; the ANN report is likewise generic coursework."
+    },
+    {
+      "id": "restaurant-app-plan",
+      "title": "Restaurant App Plan (CSCI340)",
+      "category": "Documentation",
+      "source": "Upload corpus",
+      "url": null,
+      "reason": "A planning/design deck for a coursework app with no shipped implementation. Not a completed build; excluded in favor of finished projects."
+    },
+    {
+      "id": "fitness-prototype",
+      "title": "Interactive Fitness Prototype (CSCI315 Web UI)",
+      "category": "Web",
+      "source": "Upload corpus",
+      "url": null,
+      "reason": "UI prototype descriptions and a large prototype PDF from a UX course. Prototype-only coursework, not a working application; excluded to prioritize substantial implementations."
+    },
+    {
+      "id": "html-quiz",
+      "title": "HTML Quiz Write-Up (CSCI325)",
+      "category": "Documentation",
+      "source": "Upload corpus",
+      "reason": "Introductory HTML coursework write-up (also a ~10MB single doc). Generic beginner material; excluded."
+    },
+    {
+      "id": "stats-project",
+      "title": "MATH302 Statistics — Executive Summary & Data Analysis",
+      "category": "Documentation",
+      "source": "Upload corpus",
+      "reason": "General-education statistics coursework, not AI/ML or software engineering. Excluded as non-marketable for the target roles."
+    },
+    {
+      "id": "gen-ed-coursework",
+      "title": "Assorted general-education coursework",
+      "category": "Documentation",
+      "source": "Upload corpus",
+      "reason": "STEM185 timeline, ENGL235 linguistics, IRLS200 information-literacy essays, PSYC304 perspective paper, COMM120 digital-literacy deck: general-education assignments unrelated to AI/ML or software engineering. Excluded."
+    }
+  ]
+}

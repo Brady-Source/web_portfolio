@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>How to Use Gen AI — Brady Finnell</title>
+  <meta name="description" content="A beginner-to-intermediate guide to using generative AI responsibly: fundamentals, personalizing your AI, what not to put into AI, and how to think about which model to use." />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; form-action 'none'; frame-src 'none'; object-src 'none'; manifest-src 'self'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Use Gen AI — Brady Finnell" />
+  <meta property="og:description" content="A practical, responsible-use guide to generative AI: fundamentals, personalization, privacy, and choosing a model." />
+  <meta property="og:url" content="https://bradys.dev/genai.html" />
+  <meta property="og:image" content="https://bradys.dev/assets/img/og-home.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="https://bradys.dev/genai.html" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/fonts/satoshi-900.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Brady Finnell — home">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BF diamond brand mark">
+          <rect x="6.5" y="6.5" width="27" height="27" rx="4" transform="rotate(45 20 20)" stroke="currentColor" stroke-width="2"/>
+          <path d="M17 14h4.6c2.1 0 3.4 1.1 3.4 2.9 0 1.3-.7 2.2-1.9 2.6v.1c1.4.3 2.3 1.3 2.3 2.8 0 2-1.5 3.6-4 3.6H17v-2h4.1c1.3 0 2.1-.7 2.1-1.8 0-1.1-.8-1.8-2.2-1.8H18v-1.9h2.6c1.2 0 2-.6 2-1.6 0-1-.7-1.6-1.9-1.6H17z" fill="currentColor"/>
+          <path d="M16 14h2v12h-2z" fill="currentColor"/>
+        </svg>
+        <span>Brady&nbsp;Finnell</span>
+      </a>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="prompts.html">Prompts</a></li>
+          <li><a href="genai.html" aria-current="page">How to GenAI</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"></button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+          <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <div class="page-head">
+        <p class="eyebrow">How to Use Gen AI</p>
+        <h1>Maximize your AI</h1>
+        <p>New to generative AI? So is everyone else. Use it to get ahead, not to replace your own judgment. This guide covers the fundamentals, how to personalize your AI, what to avoid, and how to think about which model to use.</p>
+      </div>
+
+      <nav class="guide-nav" aria-label="Guide sections">
+        <a href="#fundamentals">Fundamentals <span aria-hidden="true">→</span></a>
+        <a href="#personalize">Personalize Your AI <span aria-hidden="true">→</span></a>
+        <a href="#donts">Don&rsquo;ts With AI <span aria-hidden="true">→</span></a>
+        <a href="#models">Which Model Should I Use <span aria-hidden="true">→</span></a>
+      </nav>
+
+      <!-- FUNDAMENTALS -->
+      <section class="guide-section" id="fundamentals" aria-labelledby="fundamentals-h">
+        <h2 id="fundamentals-h">Generative AI Fundamentals</h2>
+        <div class="guide-cols">
+          <div class="guide-card">
+            <h3>What is Gen AI?</h3>
+            <p>Generative AI describes systems that produce new content — text, images, code, audio — by predicting likely continuations from patterns learned during training. A large language model does not &ldquo;look up&rdquo; answers; it generates a plausible response one piece at a time. That makes it powerful for drafting, summarizing, and brainstorming, and also means its output should be treated as a confident first draft, not a verified fact.</p>
+          </div>
+          <div class="guide-card">
+            <h3>Who uses Gen AI?</h3>
+            <p>People in nearly every field: engineers use it to draft and review code, writers to tighten prose, analysts to summarize documents, and students to explain hard concepts. You do not need a technical background — the main skill is describing what you want clearly and checking the result.</p>
+          </div>
+          <div class="guide-card">
+            <h3>Is it going to take our jobs?</h3>
+            <p>The more useful framing is that AI changes tasks more than it eliminates whole roles. It handles repetitive drafting and lookup work, which frees you to focus on judgment, context, and decisions. Treat it as a capable assistant that still needs a human in the loop — you own the final result.</p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Verify before you trust.</strong> Models can produce confident, well-written statements that are simply wrong — these are called <em>hallucinations</em>. For anything that matters, confirm names, numbers, quotes, and citations against a reliable source before you rely on them.
+        </div>
+      </section>
+
+      <!-- PERSONALIZE -->
+      <section class="guide-section" id="personalize" aria-labelledby="personalize-h">
+        <h2 id="personalize-h">Personalize Your AI</h2>
+        <div class="guide-cols">
+          <div class="guide-card">
+            <h3>Give it context</h3>
+            <p>The quality of an answer tracks the quality of the context you provide. Tell the model who you are, what you are trying to achieve, the audience, the format you want, and any constraints. Many tools also offer persistent workspaces — such as Projects or Spaces — where you can store background material and instructions so you do not have to repeat yourself every time.</p>
+          </div>
+          <div class="guide-card">
+            <h3>Iterate on your prompt</h3>
+            <p>Rarely is the first prompt the best one. If a response misses, do not start over — tell the model what was wrong and ask it to adjust. Ask it to be more concise, change the tone, show its reasoning, or give alternatives. Prompting is a short conversation, not a single command.</p>
+          </div>
+          <div class="guide-card">
+            <h3>Manage the AI&rsquo;s memory</h3>
+            <p>Some assistants remember details across chats. Look for a memory or personalization setting in your tool to review, edit, or clear what it has stored about you. Clearing memory is useful when you switch topics, or when you want a clean, unbiased response.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DON'TS -->
+      <section class="guide-section" id="donts" aria-labelledby="donts-h">
+        <h2 id="donts-h">Don&rsquo;ts With AI</h2>
+        <div class="guide-cols">
+          <div class="guide-card">
+            <h3>What not to put into AI</h3>
+            <p>Do not paste personal or sensitive information you would not want stored or seen by others — no personally identifiable information (PII), no protected health information (HIPAA-covered data), no passwords, no client secrets, and no proprietary or classified material. Once information is submitted, you often cannot take it back.</p>
+          </div>
+          <div class="guide-card">
+            <h3>Too much or too little instruction</h3>
+            <p>Vague prompts produce vague answers; over-stuffed prompts bury the actual request. Aim for a clear goal, the essential context, and the output format — then refine. If the model is guessing at what you mean, that is a signal to add one specific detail, not ten.</p>
+          </div>
+          <div class="guide-card">
+            <h3>Are they using my information?</h3>
+            <p>Check the privacy settings in the app you are using. Many services let you turn off training or history. As a general rule, assume that text you input and receive may be retained by the provider — often not tied to your account, but retained nonetheless. When in doubt, leave sensitive details out.</p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Responsible use in one line:</strong> keep private data out, verify anything that matters, disclose AI assistance where honesty requires it, and remember that you are accountable for what you publish or submit.
+        </div>
+      </section>
+
+      <!-- MODELS -->
+      <section class="guide-section" id="models" aria-labelledby="models-h">
+        <h2 id="models-h">Which Model Should I Use?</h2>
+        <p>Different models are better at different things — some excel at images, some at long-form text, some at data analysis or coding. Rather than name specific products (which change constantly), use the table below as a template: fill in the current models you have access to and note their strengths, trade-offs, cost, and where to find them. Try the same prompt in two tools and compare — that quickly tells you which one fits a given task.</p>
+        <div class="table-wrap">
+          <table class="model-table">
+            <caption>Model comparison template — placeholder rows. Fill in with current models and your own notes; no time-sensitive product claims are made here.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Model name</th>
+                <th scope="col">Strengths</th>
+                <th scope="col">Trade-offs</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="placeholder">Model 1</th>
+                <td class="placeholder">e.g. images</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+              </tr>
+              <tr>
+                <th scope="row" class="placeholder">Model 2</th>
+                <td class="placeholder">e.g. long-form text</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+              </tr>
+              <tr>
+                <th scope="row" class="placeholder">Model 3</th>
+                <td class="placeholder">e.g. data analysis</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+              </tr>
+              <tr>
+                <th scope="row" class="placeholder">Model 4</th>
+                <td class="placeholder">e.g. coding</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+              </tr>
+              <tr>
+                <th scope="row" class="placeholder">Model 5</th>
+                <td class="placeholder">e.g. everyday chat</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+                <td class="placeholder">to be added</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-6">Ready to practice? Browse the <a href="prompts.html">prompt library</a> and try one in your tool of choice.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <ul class="footer-links">
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/Brady-Source" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/brady-finnell/" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+      <p class="footer-meta">&copy; <span id="year">2026</span> Brady Finnell &middot; AI/ML Engineer</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

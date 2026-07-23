@@ -1,0 +1,104 @@
+{
+  "categories": ["Personal", "Financial", "Business", "Job Search", "Learning", "Coding", "Writing"],
+  "author": "Brady",
+  "prompts": [
+    {
+      "id": "personal-weekly-reset",
+      "title": "Weekly Reset Planner",
+      "category": "Personal",
+      "description": "Turn a brain-dump into a calm, prioritized plan for the week ahead.",
+      "text": "You are my weekly planning partner. I will paste an unstructured brain-dump of everything on my mind. Do the following:\n1. Sort items into: Must-do, Should-do, and Could-wait.\n2. Flag anything that looks like it is actually two or three tasks and break it down.\n3. Suggest a realistic day-by-day schedule for a 5-day week, protecting at least one block of focus time per day.\n4. Call out anything I listed that is a recurring drain and suggest one small system to reduce it.\nEnd with three questions that would help you plan my week better next time.\n\nMy brain-dump: [PASTE HERE]"
+    },
+    {
+      "id": "personal-decision",
+      "title": "Decision Pressure-Test",
+      "category": "Personal",
+      "description": "Think through a hard personal decision from multiple angles before committing.",
+      "text": "I have a decision to make and want you to pressure-test my thinking, not just agree with me.\nDecision: [DESCRIBE THE DECISION]\nWhat I am leaning toward: [YOUR CURRENT LEAN]\n\nPlease:\n1. Restate the decision and the real underlying goal as you understand it.\n2. Give the three strongest arguments FOR my lean and the three strongest arguments AGAINST it.\n3. Name the assumptions I seem to be making that could be wrong.\n4. Describe what the choice looks like one year from now in the best case and the worst case.\n5. Ask me the single most useful question you still need answered.\nStay neutral and do not flatter me."
+    },
+    {
+      "id": "financial-budget-review",
+      "title": "Monthly Budget Reviewer",
+      "category": "Financial",
+      "description": "Analyze a month of spending and surface patterns without judgment.",
+      "text": "Act as a practical, non-judgmental budgeting coach. I will paste a list of my expenses for one month with amounts and rough categories.\nPlease:\n1. Total my spending and break it down by category with percentages.\n2. Identify the three categories with the most room to trim and estimate a realistic monthly savings for each.\n3. Point out any spending that looks like a recurring subscription I might have forgotten.\n4. Suggest one simple rule (like 50/30/20) adapted to my actual numbers.\nDo not assume income I did not give you. Ask me for my monthly take-home pay if I did not include it.\n\nMy expenses: [PASTE HERE]"
+    },
+    {
+      "id": "financial-big-purchase",
+      "title": "Big-Purchase Sanity Check",
+      "category": "Financial",
+      "description": "Evaluate whether a large purchase fits your situation and goals.",
+      "text": "Help me think through a large purchase clearly.\nItem: [WHAT]\nPrice: [PRICE]\nWhy I want it: [REASON]\nMy rough monthly budget picture: [INCOME / KEY EXPENSES]\n\nWalk me through:\n1. The true total cost of ownership (taxes, maintenance, subscriptions, financing interest if applicable).\n2. How this fits or conflicts with any goals I mention.\n3. Two lower-cost alternatives that might meet the same need.\n4. A short 'buy it / wait / skip it' recommendation with your reasoning.\nBe honest even if the answer is that I should not buy it. This is general information, not personalized financial advice."
+    },
+    {
+      "id": "business-swot",
+      "title": "Lean SWOT + Next Moves",
+      "category": "Business",
+      "description": "Get a focused SWOT and a short list of concrete next actions for an idea or project.",
+      "text": "You are a pragmatic business strategist. Here is my idea or project:\n[DESCRIBE THE BUSINESS, PRODUCT, OR INITIATIVE]\nTarget customer: [WHO]\nStage: [IDEA / EARLY / GROWING]\n\nProduce:\n1. A tight SWOT (max three bullets per quadrant, specific to my situation, no generic filler).\n2. The single biggest risk that could kill this and how to test it cheaply this month.\n3. Three concrete next actions ranked by leverage, each with a rough effort estimate.\nAvoid buzzwords. Be direct."
+    },
+    {
+      "id": "business-meeting-brief",
+      "title": "Meeting-to-Action Summarizer",
+      "category": "Business",
+      "description": "Convert messy meeting notes into decisions, owners, and follow-ups.",
+      "text": "Turn my raw meeting notes into a clean summary. Output exactly these sections:\n- Decisions made\n- Action items (each with an owner and a due date if stated; write 'unassigned' or 'no date' if missing)\n- Open questions still unresolved\n- One-line summary I could send to someone who missed the meeting\nIf owners or dates are unclear, list them under Open questions instead of guessing.\n\nNotes: [PASTE HERE]"
+    },
+    {
+      "id": "jobsearch-resume-tailor",
+      "title": "Resume-to-Job Tailoring",
+      "category": "Job Search",
+      "description": "Align your resume bullets to a specific job description honestly.",
+      "text": "You are a technical recruiter. I will paste a job description and my current resume bullets for one role.\nPlease:\n1. List the top 8 keywords and required skills from the job description.\n2. Show which of those I already clearly demonstrate, and which are missing or weak.\n3. Rewrite my bullets to mirror the job's language WITHOUT inventing experience I do not have. Keep every claim truthful.\n4. Flag any place where I would be stretching the truth so I can decide.\nFormat rewritten bullets as action verb + what I did + measurable result.\n\nJob description: [PASTE]\nMy resume bullets: [PASTE]"
+    },
+    {
+      "id": "jobsearch-interview-prep",
+      "title": "Interview Story Builder (STAR)",
+      "category": "Job Search",
+      "description": "Build strong, structured behavioral-interview answers from your real experience.",
+      "text": "Help me prepare for a behavioral interview. The role is: [ROLE / COMPANY].\nI will give you a real experience of mine: [BRIEFLY DESCRIBE A PROJECT OR SITUATION].\n\nDo the following:\n1. Shape it into a STAR answer (Situation, Task, Action, Result) in under 150 words, in my own plausible voice.\n2. Make the Result quantified if I gave numbers; otherwise ask me for a metric.\n3. List two likely follow-up questions an interviewer would ask about this story.\n4. Suggest one competency this story demonstrates that I should lead with.\nKeep it honest and specific to what I actually did."
+    },
+    {
+      "id": "learning-explain-levels",
+      "title": "Explain It at Three Levels",
+      "category": "Learning",
+      "description": "Understand a hard concept fast by seeing it explained at increasing depth.",
+      "text": "Explain the following concept at three levels so I can build real understanding:\nConcept: [TOPIC]\n\nLevel 1: Explain it to a curious 12-year-old in a few sentences with one everyday analogy.\nLevel 2: Explain it to a college student, including the key terms and how the pieces fit together.\nLevel 3: Explain it to a working professional, including common misconceptions and where the simple analogy breaks down.\nEnd with a two-question self-check quiz (do not give the answers yet)."
+    },
+    {
+      "id": "learning-study-plan",
+      "title": "Skill Study Plan",
+      "category": "Learning",
+      "description": "Get a realistic learning roadmap for a skill given your time budget.",
+      "text": "Act as a learning coach. I want to learn: [SKILL].\nMy current level: [BEGINNER / SOME EXPERIENCE / INTERMEDIATE].\nTime I can commit: [HOURS PER WEEK] for about [NUMBER] weeks.\nWhy I want it: [GOAL].\n\nBuild:\n1. A week-by-week roadmap that fits my time budget, with a concrete outcome for each week.\n2. One small project per phase so I am building, not just consuming.\n3. Free or low-cost resource types to look for at each stage (describe the type; I will find current ones).\n4. Signs that tell me I am ready to move to the next phase.\nKeep it realistic for someone learning around other commitments."
+    },
+    {
+      "id": "coding-debug",
+      "title": "Rubber-Duck Debugger",
+      "category": "Coding",
+      "description": "Systematically diagnose a bug instead of guessing at fixes.",
+      "text": "You are a senior engineer helping me debug. Do not immediately rewrite my code.\nHere is the problem:\n- Language / framework: [E.G. Python / Flask]\n- What I expected to happen: [EXPECTED]\n- What actually happens: [ACTUAL, INCLUDING ANY ERROR MESSAGE]\n- Relevant code: [PASTE MINIMAL SNIPPET]\n\nWalk me through:\n1. The three most likely causes, ranked, with the reasoning for each.\n2. A specific thing I can print, log, or check to confirm or rule out each cause.\n3. Only after that, the smallest fix for the most likely cause.\nAsk me for more context if the snippet is not enough rather than assuming."
+    },
+    {
+      "id": "coding-review",
+      "title": "Code Review for Readability & Safety",
+      "category": "Coding",
+      "description": "Get a focused review covering correctness, readability, and security.",
+      "text": "Review the following code as a careful reviewer. Language: [LANGUAGE].\nCode: [PASTE]\n\nGive feedback in these buckets, most important first:\n1. Correctness / likely bugs\n2. Security concerns (input validation, injection, secrets, auth)\n3. Readability and naming\n4. Simpler or more idiomatic approaches\nFor each point, quote the relevant line and suggest a concrete change. Do not rewrite the whole file unless I ask; keep suggestions surgical. Note anything you are unsure about instead of guessing."
+    },
+    {
+      "id": "writing-tighten",
+      "title": "Tighten My Draft",
+      "category": "Writing",
+      "description": "Cut the fluff while keeping your voice and meaning intact.",
+      "text": "Edit the text below for clarity and concision. Rules:\n1. Keep my voice and intent; do not make it sound like generic marketing copy.\n2. Cut filler, hedging, and redundancy. Prefer shorter sentences and plain words.\n3. Do not add facts or claims I did not write.\n4. Show the edited version first, then a short bullet list of the biggest changes and why.\nTarget length: about [WORD COUNT or 'similar to original'].\n\nDraft: [PASTE]"
+    },
+    {
+      "id": "writing-audience-adapt",
+      "title": "Rewrite for a Specific Audience",
+      "category": "Writing",
+      "description": "Adapt the same message for a different reader and purpose.",
+      "text": "Rewrite the message below for a specific audience.\nOriginal message: [PASTE]\nNew audience: [WHO THEY ARE]\nTheir priorities: [WHAT THEY CARE ABOUT]\nDesired tone: [E.G. professional but warm]\nDesired length: [SHORT / MEDIUM]\n\nPlease:\n1. Produce the rewritten version.\n2. In one line, explain the key shift you made for this audience.\nDo not invent details that were not in my original message; ask if something essential is missing."
+    }
+  ]
+}

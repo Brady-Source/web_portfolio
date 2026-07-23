@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="BF brand mark">
+  <rect width="40" height="40" rx="8" fill="#01696f"/>
+  <rect x="8.5" y="8.5" width="23" height="23" rx="3" transform="rotate(45 20 20)" stroke="#f7f6f2" stroke-width="1.6" fill="none"/>
+  <text x="20" y="25.5" text-anchor="middle" font-family="Satoshi, Arial, sans-serif" font-size="15" font-weight="900" fill="#f7f6f2">BF</text>
+</svg>

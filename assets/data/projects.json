@@ -1,0 +1,180 @@
+{
+  "categories": [
+    "Web",
+    "AI",
+    "Documentation"
+  ],
+  "projects": [
+    {
+      "id": "rts-dqn-agents",
+      "title": "RTS Multi-Agent Deep Q-Learning",
+      "category": "AI",
+      "tagline": "From-scratch multi-agent reinforcement learning in a custom real-time-strategy environment.",
+      "viewer": "image",
+      "image": "assets/img/rts-training-curves.png",
+      "imageAlt": "Training reward and loss curves for the Farmers and Fighters multi-agent DQN, showing reward increasing and loss decreasing across episodes.",
+      "links": [
+        {
+          "label": "Code",
+          "type": "code",
+          "url": "https://github.com/Brady-Source/rts_dqn_agents"
+        }
+      ],
+      "tech": [
+        "PyTorch",
+        "Reinforcement Learning",
+        "Multi-agent DQN",
+        "Python",
+        "Gymnasium-style env"
+      ],
+      "description": "A capstone reinforcement-learning project for a Deep and Reinforcement Learning course. Brady built “Farmers & Fighters,” a custom real-time-strategy environment where two teams each field a farmer agent (harvests crops to buff its fighter) and a fighter agent (eliminates the opposing team). Agents learn purely from reward signals using a hand-built training loop.",
+      "highlights": [
+        "Multi-layer perceptron Q-network implemented in PyTorch",
+        "Experience replay buffer and target-network style updates",
+        "Custom environment with stochastic spawns, timed crop respawns, and a center buff",
+        "Hand-tuned reward shaping and hyperparameters with logged training curves",
+        "Reproducible setup: requirements.txt, virtual-env instructions, and demo GIFs in the repo"
+      ],
+      "railTitle": "RTS Multi-Agent DQN"
+    },
+    {
+      "id": "flask-advancing-ai",
+      "title": "Flask Advancing AI — Full-Stack Forum",
+      "category": "Web",
+      "tagline": "Secure full-stack web application: OAuth, role-based access control, and a REST API.",
+      "viewer": "codeDemo",
+      "links": [
+        {
+          "label": "Code",
+          "type": "code",
+          "url": "https://github.com/Brady-Source/Flask-Advancing-AI"
+        },
+        {
+          "label": "Demo",
+          "type": "demo",
+          "url": null
+        }
+      ],
+      "tech": [
+        "Flask",
+        "SQLAlchemy",
+        "Google OAuth 2.0",
+        "RBAC",
+        "REST API",
+        "Flask-Talisman",
+        "Docker",
+        "unittest"
+      ],
+      "description": "A production-shaped Flask forum platform built to demonstrate full-stack web-application engineering. It combines Google OAuth 2.0 sign-in, five-tier role-based access control, salted SHA-256 password hashing, signed expiring tokens for account flows, a follow system, a Markdown post editor with sanitization, and a paginated token-authenticated REST API. Security headers and HTTPS are enforced with Flask-Talisman, and the app ships with unit tests and a Dockerfile.",
+      "highlights": [
+        "Google OAuth 2.0 authentication plus custom salted SHA-256 hashing",
+        "Role-based access control across User, Editor, Moderator, Admin, and Applicant roles",
+        "Token-based confirm / reset / email-change flows with itsdangerous",
+        "Paginated REST API with Flask-HTTPAuth token authentication",
+        "Flask-Talisman security headers, unit tests, and containerized deploy"
+      ],
+      "demoNote": "The live demo depends on a database and Google OAuth backend, so the interactive demo action is intentionally disabled on this static site.",
+      "railTitle": "Flask Advancing AI"
+    },
+    {
+      "id": "calendar",
+      "title": "Training Management Calendar",
+      "category": "Web",
+      "tagline": "Flask scheduling app with filtering and CSV / PDF export.",
+      "viewer": "codeDemo",
+      "links": [
+        {
+          "label": "Code",
+          "type": "code",
+          "url": "https://github.com/Brady-Source/calendar"
+        },
+        {
+          "label": "Demo",
+          "type": "demo",
+          "url": null
+        }
+      ],
+      "tech": [
+        "Flask",
+        "SQLAlchemy",
+        "Flask-Login",
+        "FullCalendar",
+        "WeasyPrint",
+        "CSV export"
+      ],
+      "description": "A lightweight scheduling tool for creating, editing, and exporting events, inspired by military training-management workflows. It pairs a Flask + SQLAlchemy backend with a FullCalendar frontend, supports authentication, category and section filters, and date-range selection, and exports events to CSV and PDF.",
+      "highlights": [
+        "Full CRUD for events with authentication via Flask-Login",
+        "Filter the calendar by category, section, and date range",
+        "Export to CSV and to PDF (WeasyPrint with a wkhtmltopdf fallback)",
+        "FullCalendar frontend wired to a Flask-WTF form layer"
+      ],
+      "demoNote": "The live demo depends on a Flask backend and database, so the interactive demo action is intentionally disabled on this static site.",
+      "railTitle": "Training Calendar"
+    },
+    {
+      "id": "m2s-mental-health",
+      "title": "Marine Mental Strength (M2S) — AI Triage System Design",
+      "category": "Documentation",
+      "tagline": "Academic system-design report for a privacy-first, RAG-grounded mental-health triage assistant.",
+      "viewer": "pdf",
+      "pdf": "assets/docs/m2s-ai-triage-design.pdf",
+      "context": "Academic design proposal (Machine Learning coursework). Not a deployed clinical product and not built on any real patient data — it is a use-case and architecture study. Included here to show responsible-AI, privacy, and ML system-design thinking.",
+      "links": [],
+      "tech": [
+        "RAG",
+        "LLM systems",
+        "Dual-encoder retriever",
+        "MentalBERT safety governor",
+        "HIPAA Safe Harbor",
+        "NIST AI RMF",
+        "PyTorch"
+      ],
+      "description": "A machine-learning system-design report proposing a privacy-first assistant to help reduce stigma and connect service members to mental-health care. The design centers on a retrieval-augmented-generation pipeline with a dual-encoder retriever, metadata filtering, and reranking; a primary conversational LLM; and a secondary transformer acting as a safety governor to rewrite or block unsafe outputs. It documents HIPAA Safe Harbor de-identification, NER-based PII/PHI scrubbing, consent-driven data handling, and governance under the NIST AI Risk Management Framework. The report explicitly frames the tool as triage-only, never a diagnosis, and emphasizes human clinical oversight.",
+      "highlights": [
+        "RAG architecture: dual-encoder bi-transformer retriever, metadata filter, reranker",
+        "Layered safety: a secondary transformer governor blocks or rewrites unsafe outputs",
+        "Privacy engineering: HIPAA Safe Harbor de-identification and synthetic-data replacement",
+        "Governance: NIST AI RMF, red-teaming, IRB collaboration, and consent-based retention",
+        "Responsible framing: triage-only, not a diagnostic tool, with clinician oversight"
+      ],
+      "railTitle": "M2S AI Triage Design"
+    },
+    {
+      "id": "shopsphere-db",
+      "title": "ShopSphere — Scalable Database Architecture",
+      "category": "Documentation",
+      "tagline": "Relational + warehouse database design for a distributed e-commerce platform.",
+      "viewer": "doc",
+      "links": [],
+      "tech": [
+        "PostgreSQL",
+        "Snowflake schema",
+        "ETL",
+        "Concurrency control",
+        "RBAC",
+        "SSL/TLS"
+      ],
+      "description": "A database-systems design study for “ShopSphere,” a hypothetical e-commerce startup. The document works through a full data architecture: a snowflake warehouse schema, an ETL pipeline mirroring fact and dimension tables, row-level concurrency control in PostgreSQL, parameterized-query API integration, role-based access with SSL/TLS and hashing, and a horizontal-scaling plan using read replicas and partitioning.",
+      "highlights": [
+        "Snowflake warehouse schema with fact/dimension separation and surrogate keys",
+        "ETL pipeline for near-real-time analytics without loading the transactional DB",
+        "Row-level locking (SELECT … FOR UPDATE) for concurrency control",
+        "Parameterized-query API layer to prevent SQL injection",
+        "Distributed scaling: read replicas, table partitioning, and load balancing"
+      ],
+      "docSummary": [
+        "ShopSphere: Designing a Scalable Solution and Secure Database Architecture — Brady Finnell, CSCI360 Introduction to Database Systems.",
+        "To build the ShopSphere database for analytics and efficient retrieval, a snowflake architecture is used. Tables connect through strategic primary and foreign keys, and columns are indexed by usage frequency for updates and analytics. A fact-and-dimension structure allows the database to be distributed as needed, with per-query commits managing concurrency of replicated data across server locations and authorization gating who can perform which actions.",
+        "ShopSphere is an e-commerce platform aiming to change how consumers find, research, and purchase products. The snowflake schema supports efficient analytics without sacrificing transactional speed. The goal is a system that is efficient, scalable, maintains data integrity, and keeps user data safe — covering concurrency control, data integrity, warehousing, web-platform integration, security, and scalability in a distributed environment.",
+        "Concurrency control prevents data loss when records are updated simultaneously. ShopSphere uses PostgreSQL row-level locking with SELECT … FOR UPDATE, holding a record until commit or rollback. Optimistic concurrency with timestamps was considered less reliable under heavy simultaneous transactions. Data integrity is enforced through primary and foreign keys and PostgreSQL's built-in check functions.",
+        "To keep analytics from straining the transactional server, a separate warehouse uses a snowflake schema. An Extract-Transform-Load sequence mirrors fact and dimension tables, normalizes formats, removes redundancy, and uses surrogate keys for consistency over time. Derived measures — such as sales totals per order and repeat-customer flags — are computed during transformation, and dimensions load before facts to respect dependencies.",
+        "The database communicates with the website through a secret-key-secured API. Backend services translate HTTP requests into parameterized SQL queries and stored procedures, protecting against SQL injection. The API reads from dimension and fact tables, commits transactions, and updates stock. This modular design lets the schema evolve with little frontend impact, and caching on high-traffic endpoints such as product search reduces query load.",
+        "Security uses role-based access control so only assigned roles — administrators, analysts, or API services — can perform specific actions. Sensitive data and passwords are hashed, transport is encrypted with SSL/TLS, and scheduled off-site backups plus comprehensive audit trails support recovery and compliance with standards such as GDPR and CCPA.",
+        "For scalability, ShopSphere is built for distributed deployment: read replicas increase availability for analytics and customer requests, large tables are partitioned by date or region, and application-tier load balancing spreads traffic. Together these strategies keep the system efficient and available as the customer base grows.",
+        "Through a carefully designed framework — concurrency management, thorough ETL, secure web integration, and forward-looking security and scalability — the ShopSphere database is positioned to support both current operations and future analytics and growth."
+      ],
+      "railTitle": "ShopSphere Database"
+    }
+  ]
+}

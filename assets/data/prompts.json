@@ -17,6 +17,62 @@
       "text": "I have a decision to make and want you to pressure-test my thinking, not just agree with me.\nDecision: [DESCRIBE THE DECISION]\nWhat I am leaning toward: [YOUR CURRENT LEAN]\n\nPlease:\n1. Restate the decision and the real underlying goal as you understand it.\n2. Give the three strongest arguments FOR my lean and the three strongest arguments AGAINST it.\n3. Name the assumptions I seem to be making that could be wrong.\n4. Describe what the choice looks like one year from now in the best case and the worst case.\n5. Ask me the single most useful question you still need answered.\nStay neutral and do not flatter me."
     },
     {
+    "id": "military-experience-translate",
+    "title": "Military Experience to Civilian Resume Translator",
+    "category": "Job Search",
+    "description": "Rewrite military job duties, achievements, and titles into clear civilian language that recruiters and hiring managers can easily understand.",
+    "text": "Act as a practical, non-judgmental resume translator for a service member transitioning to civilian life. I will paste my military job titles, duties, achievements, and skills.\nPlease:\n1. Rewrite everything into clear civilian language.\n2. Remove jargon while keeping the meaning accurate.\n3. Highlight leadership, operations, logistics, training, compliance, communications, and technical skills.\n4. Give me civilian-friendly bullet points I can use directly on a resume.\n5. Suggest keywords and job titles that match my experience.\nIf any information is missing, tell me what details would make the translation stronger.\n\nMy military experience: [PASTE HERE]"
+    },
+    {
+      "id": "civilian-resume-builder",
+      "title": "Civilian Resume Builder for Transitioning Service Members",
+      "category": "Job Search",
+      "description": "Turn a military service record into a polished civilian resume with a summary, skills section, experience bullets, and suggested keywords.",
+      "text": "Act as a civilian resume writer for a transitioning service member. I will provide my military background, achievements, education, certifications, and job targets.\nPlease:\n1. Create a one-page or two-page civilian resume draft.\n2. Include a professional summary, skills section, experience section, and education section.\n3. Emphasize measurable results, leadership, problem-solving, teamwork, and technical ability.\n4. Convert military language into civilian-friendly wording.\n5. Point out any gaps or missing details that would improve the resume.\nUse a professional tone and make the resume ATS-friendly.\n\nMy background: [PASTE HERE]"
+    },
+    {
+      "id": "military-job-title-converter",
+      "title": "Military Job Title to Civilian Role Converter",
+      "category": "Job Search",
+      "description": "Translate a military job title into accurate civilian job titles, explain the fit, and identify industries that value that experience.",
+      "text": "Act as a career translator for military professionals. I will give you a military job title and a short description of what I did.\nPlease:\n1. Identify the most accurate civilian job titles.\n2. Explain why each civilian title fits.\n3. Group the titles into leadership, technical, operations, and administrative options if applicable.\n4. Suggest industries and roles that would value this experience.\n5. Give me resume keywords I should use.\nIf there is more than one good interpretation, show the best options.\n\nMy military job title and duties: [PASTE HERE]"
+    },
+    {
+      "id": "resume-bullet-strengthener",
+      "title": "Resume Bullet Point Strengthener",
+      "category": "Job Search",
+      "description": "Transform rough notes or military accomplishments into strong, metric-driven resume bullets using civilian-friendly wording.",
+      "text": "Act as a resume bullet writer for a military-to-civilian transition. I will provide rough notes, awards, performance reports, or duty descriptions.\nPlease:\n1. Rewrite each item as a strong resume bullet.\n2. Use action verb + task + scope + measurable result.\n3. Make the language civilian-friendly without exaggeration.\n4. Suggest metrics I could add if a bullet is missing numbers.\n5. Rank the bullets from strongest to weakest for a resume.\n\nMy rough notes: [PASTE HERE]"
+    },
+    {
+      "id": "civilian-job-mock-interview",
+      "title": "Civilian Job Mock Interview",
+      "category": "Interview Practice",
+      "description": "Practice a realistic interview by answering one question at a time and receiving feedback on clarity, confidence, and civilian translation.",
+      "text": "Act as a hiring manager interviewing a service member for a civilian role. Ask me one question at a time based on the job I am targeting.\nPlease:\n1. Focus on leadership, teamwork, conflict, adaptability, and measurable results.\n2. After each answer, give brief feedback on clarity, confidence, and civilian language.\n3. Help me translate military experience into language a civilian employer would understand.\n4. Continue for 10 to 15 questions.\nStart by asking the first interview question.\n\nTarget job: [PASTE HERE]"
+    },
+    {
+      "id": "behavioral-interview-coach",
+      "title": "Behavioral Interview Coach",
+      "category": "Interview Practice",
+      "description": "Practice STAR-style behavioral questions and get feedback plus stronger versions of each answer for civilian interviews.",
+      "text": "Act as a behavioral interview coach for a transitioning service member. Ask me realistic STAR-method interview questions one at a time.\nPlease:\n1. Score my answers on structure, relevance, confidence, and impact.\n2. Tell me when my answer sounds too military-specific.\n3. Rewrite my answer into a stronger civilian interview response.\n4. Focus on leadership, problem-solving, teamwork, conflict resolution, and adaptability.\nStart with the first question.\n\nMy target role: [PASTE HERE]"
+    },
+    {
+      "id": "strengths-report-questions",
+      "title": "Strengths Report Questionnaire Generator",
+      "category": "Career Development",
+      "description": "Create a downloadable set of 30–40 questions that gathers the information needed to build a personalized strengths report.",
+      "text": "Create a structured questionnaire with 30 to 40 thoughtful, relevant questions that will help me gather the information needed to generate a personalized strengths report.\nPlease:\n1. Organize the questions by themes like motivations, problem-solving, communication, leadership, decision-making, stress response, teamwork, and growth areas.\n2. Make the questions easy to answer in a downloadable format.\n3. Keep the language clear, simple, and original.\n4. Avoid copying the wording or structure of any proprietary report.\n5. After I fill it out and upload my answers, use them to build a detailed strengths report.\n\nCreate the questionnaire now."
+    },
+    {
+      "id": "strengths-report-writer",
+      "title": "Strengths Report Writer from Questionnaire Responses",
+      "category": "Career Development",
+      "description": "Use completed questionnaire answers to generate an original strengths report with themes, patterns, blind spots, and development advice.",
+      "text": "Use my completed questionnaire responses to create an original strengths report.\nPlease:\n1. Identify my key strengths and recurring patterns.\n2. Explain possible blind spots and growth areas.\n3. Give practical advice I can apply in work and daily life.\n4. Organize the report into clear sections that are easy to read.\n5. Keep it original and do not copy the wording, structure, or proprietary content of any sample report.\n\nMy completed responses: [PASTE HERE]"
+    },
+    {
       "id": "financial-budget-review",
       "title": "Monthly Budget Reviewer",
       "category": "Financial",

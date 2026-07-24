@@ -62,7 +62,11 @@
         <h1>Generative AI prompts</h1>
         <p>Find a prompt, copy it with the clipboard button, then paste it into the Gen AI of your choice and run. New to Gen AI? <a href="genai.html">Learn how to maximize your AI</a>.</p>
       </div>
-
+      <div class="prompts-header">
+          <a class="btn btn--ghost" href="contact.html">Submit New Prompt
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+        </div>
       <div class="split">
         <aside class="rail" aria-label="Prompt list and filter">
           <label class="rail__label" for="cat-filter">What are you looking for?</label>
@@ -71,7 +75,7 @@
           </select>
           <ul class="rail__list" id="prompt-rail" role="list" aria-label="Prompts"></ul>
         </aside>
-
+        
         <section class="work" aria-label="Prompts">
           <!-- Detail view for a single selected prompt (driven by URL hash) -->
           <div class="panel prompt-detail" id="prompt-detail" hidden aria-live="polite"></div>

@@ -152,6 +152,19 @@ h1, h2, h3 { font-family: var(--font-display); }
   border-radius: 4px;
 }
 
+.prompts-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.submit-new-prompts-btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 /* ---- Skip link ---- */
 .skip-link {
   position: absolute;

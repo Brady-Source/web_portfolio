@@ -66,35 +66,6 @@ stored preference the site follows the OS `prefers-color-scheme` live. All motio
 
 ---
 
-## Configuration
-
-### 1. Contact form (Formspree)
-
-`contact.html` submits to a **placeholder** Formspree endpoint and contains **no secret**:
-
-```html
-<form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-```
-
-To enable delivery:
-
-1. Create a free form at <https://formspree.io> and copy its form ID.
-2. Replace `your-form-id` in the `action` attribute with your real ID
-   (e.g. `https://formspree.io/f/abcdwxyz`).
-
-Until a real ID is set, the form still validates client-side and shows a clear message
-explaining that no delivery service is connected — it never makes a failing network call.
-No email address appears in the page; Formspree routes messages to the address configured
-in your Formspree account.
-
-### 2. Canonical domain
-
-Absolute URLs (canonical, Open Graph, sitemap) use `https://bradys.dev/`. If the site is
-hosted elsewhere, update the `<link rel="canonical">`, `og:url`, and `og:image` tags plus
-`sitemap.xml` and `robots.txt`.
-
----
-
 ## Security & headers
 
 Each page ships a **meta-delivered Content-Security-Policy** scoped to the origins the page
@@ -107,23 +78,6 @@ actually uses:
   `form-action https://formspree.io` for the form submission.
 
 Also set on every page: `<meta name="referrer" content="strict-origin-when-cross-origin">`.
-
-### Must be set as real HTTP response headers on the server
-
-A CSP delivered via `<meta>` **cannot enforce `frame-ancestors`**, and
-`X-Content-Type-Options` is ignored when delivered via `<meta>`. These must be sent as
-actual HTTP response headers by the eventual Google Cloud server (e.g. via the web server
-or a `_headers`/config file):
-
-```
-Content-Security-Policy: frame-ancestors 'none'
-X-Content-Type-Options: nosniff
-Referrer-Policy: strict-origin-when-cross-origin
-```
-
-You may also mirror the full CSP as an HTTP header for stronger enforcement. The meta CSP in
-these pages is the strongest valid meta policy; it does **not** claim to enforce
-`frame-ancestors` (that clickjacking protection comes only from the HTTP header above).
 
 ### Other security notes
 
@@ -166,30 +120,6 @@ To fall back to the Fontshare CDN instead, remove the `@font-face` rules at the 
 
 ---
 
-## Content selection (what’s included and why)
-
-Projects were curated from Brady’s public GitHub (<https://github.com/Brady-Source>), the
-uploaded project corpus, and his targeted resume. Only completed, marketable work is shown.
-The full per-project inclusion/exclusion rationale lives in
-`assets/data/project-review.json`. Summary:
-
-**Included**
-
-- **RTS Multi-Agent Deep Q-Learning** (AI, GitHub) — from-scratch multi-agent DQN in PyTorch
-  with a custom environment, replay buffer, reward shaping, and training curves.
-- **Flask Advancing AI** (Web, GitHub) — secure full-stack forum: OAuth 2.0, RBAC, REST API,
-  security headers, tests, Docker.
-- **Training Management Calendar** (Web, GitHub) — Flask scheduling app with filtering and
-  CSV/PDF export.
-- **Marine Mental Strength (M2S) — AI Triage System Design** (Documentation) — an **academic
-  ML system-design report**, embedded as a PDF. Included only because it is professionally
-  appropriate, contains no real patient data and identifies no individuals, and is
-  technically strong (RAG with a dual-encoder retriever + reranker, a transformer safety
-  governor, HIPAA Safe Harbor de-identification, and NIST AI RMF governance). It is clearly
-  framed as a triage-only design proposal, not a deployed clinical tool.
-- **ShopSphere — Scalable Database Architecture** (Documentation) — a database-systems design
-  shown as a **non-editable scrollable text summary** (snowflake warehouse, ETL, concurrency
-  control, RBAC, distributed scaling).
 
 **Excluded** (see `project-review.json` for reasons): tutorial/learning repos (Asteroids,
 blog, Flask_Tut, webflyx), the destination repo itself, time-sensitive LLM-analysis coursework,
@@ -207,20 +137,6 @@ embed. **Brady’s email address is intentionally excluded from all markup**; on
 public GitHub and LinkedIn links appear.
 
 ---
-
-## Local development / QA
-
-```bash
-# from the project root
-python3 -m http.server 8099
-# then open http://127.0.0.1:8099/
-```
-
-QA performed with Playwright at desktop (1280px) and mobile (360/375px): all five pages,
-navigation, full theme-toggle cycle, category filters, project selection, prompt copy and
-detail state, modal open/close/focus, form validation, keyboard operation, 360px overflow,
-and both themes. Audits run: JSON parse, internal link/path, strict HTML validation
-(html5lib), and axe-core accessibility (0 violations). Fixes were applied before handoff.
 
 ## License
 

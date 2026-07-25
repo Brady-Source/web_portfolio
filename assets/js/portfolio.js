@@ -73,15 +73,39 @@
   }
 
   /* ---- Content viewers ---- */
-  function buildImageViewer(proj) {
+  function buildMediaViewer(proj) {
     var wrap = el('div', { className: 'viewer' });
     var box = el('div', { className: 'viewer__image' });
-    var img = el('img', { attrs: { src: proj.image, alt: proj.imageAlt || (proj.title + ' preview') } });
-    box.appendChild(img);
-    wrap.appendChild(box);
-    if (proj.imageCaption) {
-      wrap.appendChild(el('p', { text: proj.imageCaption, className: 'doc-caption' }));
+
+    var src = proj.image || proj.gif || proj.media;
+    if (!src) return null;
+
+    var alt = proj.imageAlt || proj.mediaAlt || (proj.title + ' preview');
+    var cleanSrc = src.split('?')[0].toLowerCase();
+    var isImageLike = /\.(gif|png|jpe?g|webp|avif|bmp|svg)$/.test(cleanSrc);
+
+    if (isImageLike) {
+      box.appendChild(el('img', {
+        attrs: {
+          src: src,
+          alt: alt,
+          loading: 'lazy',
+          decoding: 'async'
+        }
+      }));
+    } else {
+      return null;
     }
+
+    wrap.appendChild(box);
+
+    if (proj.imageCaption || proj.mediaCaption) {
+      wrap.appendChild(el('p', {
+        text: proj.imageCaption || proj.mediaCaption,
+        className: 'doc-caption'
+      }));
+    }
+
     return wrap;
   }
 
@@ -180,8 +204,11 @@
     var viewer;
     if (proj.viewer === 'pdf' && proj.pdf) viewer = buildPdfViewer(proj);
     else if (proj.viewer === 'doc') viewer = buildDocViewer(proj);
-    else if (proj.viewer === 'image' && proj.image) viewer = buildImageViewer(proj);
+    else if ((proj.viewer === 'image' || proj.viewer === 'gif' || proj.viewer === 'media') && (proj.image || proj.gif || proj.media)) {
+      viewer = buildMediaViewer(proj);
+    }
     else if (proj.viewer === 'codeDemo') viewer = buildCodeDemoPlaceholder(proj);
+
     if (viewer) detailEl.appendChild(viewer);
 
     // Description

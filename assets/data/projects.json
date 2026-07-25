@@ -11,7 +11,7 @@
       "category": "AI",
       "tagline": "From-scratch multi-agent reinforcement learning in a custom real-time-strategy environment.",
       "viewer": "image",
-      "image": "assets/img/rts-training-curves.png",
+      "image": "assets/img/best_episode.gif",
       "imageAlt": "Training reward and loss curves for the Farmers and Fighters multi-agent DQN, showing reward increasing and loss decreasing across episodes.",
       "links": [
         {
@@ -42,17 +42,14 @@
       "title": "Flask Advancing AI — Full-Stack Forum",
       "category": "Web",
       "tagline": "Secure full-stack web application: OAuth, role-based access control, and a REST API.",
-      "viewer": "codeDemo",
+      "viewer": "pdf",
+      "pdf": "assets/docs/flask_site_example_snippets.pdf",
+      "context": "Full-stack web forum built with a Flask, SQLite3, MySQL, and OAuth 2. Containerized with Docker and deployed using Horoku.",
       "links": [
         {
           "label": "Code",
           "type": "code",
           "url": "https://github.com/Brady-Source/Flask-Advancing-AI"
-        },
-        {
-          "label": "Demo",
-          "type": "demo",
-          "url": null
         }
       ],
       "tech": [
@@ -145,7 +142,9 @@
       "title": "ShopSphere — Scalable Database Architecture",
       "category": "Documentation",
       "tagline": "Relational + warehouse database design for a distributed e-commerce platform.",
-      "viewer": "doc",
+      "viewer": "pdf",
+      "pdf": "assets/docs/Shopsphere-db.pdf",
+      "context": "ShopSphere: Designing a Scalable Solution and Secure Database Architecture — Brady Finnell, CSCI360 Introduction to Database Systems.",
       "links": [],
       "tech": [
         "PostgreSQL",
@@ -162,17 +161,6 @@
         "Row-level locking (SELECT … FOR UPDATE) for concurrency control",
         "Parameterized-query API layer to prevent SQL injection",
         "Distributed scaling: read replicas, table partitioning, and load balancing"
-      ],
-      "docSummary": [
-        "ShopSphere: Designing a Scalable Solution and Secure Database Architecture — Brady Finnell, CSCI360 Introduction to Database Systems.",
-        "To build the ShopSphere database for analytics and efficient retrieval, a snowflake architecture is used. Tables connect through strategic primary and foreign keys, and columns are indexed by usage frequency for updates and analytics. A fact-and-dimension structure allows the database to be distributed as needed, with per-query commits managing concurrency of replicated data across server locations and authorization gating who can perform which actions.",
-        "ShopSphere is an e-commerce platform aiming to change how consumers find, research, and purchase products. The snowflake schema supports efficient analytics without sacrificing transactional speed. The goal is a system that is efficient, scalable, maintains data integrity, and keeps user data safe — covering concurrency control, data integrity, warehousing, web-platform integration, security, and scalability in a distributed environment.",
-        "Concurrency control prevents data loss when records are updated simultaneously. ShopSphere uses PostgreSQL row-level locking with SELECT … FOR UPDATE, holding a record until commit or rollback. Optimistic concurrency with timestamps was considered less reliable under heavy simultaneous transactions. Data integrity is enforced through primary and foreign keys and PostgreSQL's built-in check functions.",
-        "To keep analytics from straining the transactional server, a separate warehouse uses a snowflake schema. An Extract-Transform-Load sequence mirrors fact and dimension tables, normalizes formats, removes redundancy, and uses surrogate keys for consistency over time. Derived measures — such as sales totals per order and repeat-customer flags — are computed during transformation, and dimensions load before facts to respect dependencies.",
-        "The database communicates with the website through a secret-key-secured API. Backend services translate HTTP requests into parameterized SQL queries and stored procedures, protecting against SQL injection. The API reads from dimension and fact tables, commits transactions, and updates stock. This modular design lets the schema evolve with little frontend impact, and caching on high-traffic endpoints such as product search reduces query load.",
-        "Security uses role-based access control so only assigned roles — administrators, analysts, or API services — can perform specific actions. Sensitive data and passwords are hashed, transport is encrypted with SSL/TLS, and scheduled off-site backups plus comprehensive audit trails support recovery and compliance with standards such as GDPR and CCPA.",
-        "For scalability, ShopSphere is built for distributed deployment: read replicas increase availability for analytics and customer requests, large tables are partitioned by date or region, and application-tier load balancing spreads traffic. Together these strategies keep the system efficient and available as the customer base grows.",
-        "Through a carefully designed framework — concurrency management, thorough ETL, secure web integration, and forward-looking security and scalability — the ShopSphere database is positioned to support both current operations and future analytics and growth."
       ],
       "railTitle": "ShopSphere Database"
     }

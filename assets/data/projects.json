@@ -1,9 +1,5 @@
 {
-  "categories": [
-    "Web",
-    "AI",
-    "Documentation"
-  ],
+  "categories": ["Web", "AI", "Documentation", "Game"],
   "projects": [
     {
       "id": "rts-dqn-agents",
@@ -163,6 +159,42 @@
         "Distributed scaling: read replicas, table partitioning, and load balancing"
       ],
       "railTitle": "ShopSphere Database"
+    },
+    {
+      "id": "asteroids",
+      "title": "Asteroids — Pygame",
+      "category": "Game",
+      "tagline": "Classic arcade Asteroids rebuilt in Python with Pygame — structured game state, score tracking, and a restart loop.",
+      "viewer": "media",
+      "media": "assets/docs/asteroids/asteroids_demo.mp4",
+      "mediaAlt": "Gameplay video of the Asteroids project showing the player ship destroying incoming asteroids.",
+      "mediaCaption": "Local gameplay capture from the Asteroids project.",
+      "links": [
+        {
+          "label": "Code",
+          "type": "code",
+          "url": "https://github.com/Brady-Source/Asteroids"
+        }
+      ],
+      "tech": [
+        "Python",
+        "Pygame",
+        "uv",
+        "Object-Oriented Programming",
+        "Game Development",
+        "State machine"
+      ],
+      "description": "The Asteroids arcade clone written from scratch in Python with Pygame, built as part of a Boot.dev project. The game runs at 60 FPS and organizes logic into discrete modules: a circle-based collision system shared by the player ship, asteroids, and shots; a game-state machine separating RUNNING and GAME_OVER phases; an asteroid field manager that handles spawning and split-on-hit behavior; and a built-in event logger. Score is tracked on-screen at 10 points per destroyed asteroid.",
+      "highlights": [
+        "Modular OOP architecture — ship, asteroids, shots, and field each in their own class",
+        "Asteroids split into two smaller pieces on hit, cascading down through three size tiers",
+        "Shooting cooldown system (0.3 s default) and configurable spawn rate via constants.py",
+        "Game-over screen with full restart loop — no process kill required",
+        "Structured event and state logging via logger.py",
+        "Reproducible setup via uv (sync + run) or plain pip"
+      ],
+      "demoNote": "Asteroids requires a local Python + Pygame environment to run. Clone the repo and follow the Getting Started instructions in the README.",
+      "railTitle": "Asteroids"
     }
   ]
 }

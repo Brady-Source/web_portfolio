@@ -195,6 +195,40 @@
       ],
       "demoNote": "Asteroids requires a local Python + Pygame environment to run. Clone the repo and follow the Getting Started instructions in the README.",
       "railTitle": "Asteroids"
+    },
+    {
+    "id": "ecofriendly-gear",
+    "title": "EcoFriendly Gear — Bootstrap Website",
+    "category": "Web",
+    "tagline": "Multi-page responsive website built with Bootstrap 5 for a fictional sustainable outdoor gear brand.",
+    "viewer": "pdf",
+    "pdf": "assets/docs/ecofriendlygear_static_demo",
+    "context": "Multi-page responsive site built with HTML5, Bootstrap 5, and vanilla JavaScript as a school project to practice front-end layout fundamentals.",
+    "links": [
+      {
+        "label": "Code",
+        "type": "code",
+        "url": "https://github.com/Brady-Source/EcoFriendlyGear-website-"
+      }
+    ],
+    "tech": [
+      "HTML5",
+      "Bootstrap 5",
+      "JavaScript",
+      "Responsive Design",
+      "VS Code Live Server"
+    ],
+    "description": "A mock e-commerce site for a fictional eco-conscious outdoor gear brand, built to practice Bootstrap 5 fundamentals across a multi-page layout. The site includes a home page with a hero section, a card-based product grid, an about page, and a contact page with a grouped input form and FAQ accordion. Styling uses a soft neutral, light-on-dark color scheme, and the navbar and card components were customized using Bootstrap's grid and utility classes.",
+    "highlights": [
+      "Home, Products, About Us, and Contact Us pages built with Bootstrap 5's grid system",
+      "Card-based product layout with images, descriptions, and pricing",
+      "Custom navbar with logo scaling via an added navbar-brand class",
+      "Grouped contact form inputs with a custom submit button",
+      "FAQ accordion implemented with a small custom JavaScript script"
+    ],
+    "demoNote": "This was an early practice project built while learning front-end fundamentals, so it's included as a reference point for growth rather than a polished production site.",
+    "railTitle": "EcoFriendly Gear"
     }
   ]
 }
+

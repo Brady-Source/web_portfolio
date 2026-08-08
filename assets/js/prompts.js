@@ -5,12 +5,14 @@
   'use strict';
   var el = window.BF.el;
 
-  var state = { prompts: [], categories: [], filter: 'all', author: 'Brady' };
+  var state = { prompts: [], categories: [], filter: 'all', query: '', author: 'Brady' };
 
   var railEl = document.getElementById('prompt-rail');
   var gridEl = document.getElementById('prompt-grid');
   var filterEl = document.getElementById('cat-filter');
   var detailEl = document.getElementById('prompt-detail');
+  var searchEl = document.getElementById('prompt-search');
+  var searchDebounce;
 
   function clipboardIcon() {
     var svgns = 'http://www.w3.org/2000/svg';
@@ -56,8 +58,15 @@
   }
 
   function visiblePrompts() {
+    var q = state.query.trim().toLowerCase();
     return state.prompts.filter(function (p) {
-      return state.filter === 'all' || p.category === state.filter;
+      var matchesCategory = state.filter === 'all' || p.category === state.filter;
+      if (!matchesCategory) return false;
+      if (!q) return true;
+      var haystack = (
+        p.title + ' ' + p.description + ' ' + p.category + ' ' + (p.text || '')
+      ).toLowerCase();
+      return haystack.indexOf(q) !== -1;
     });
   }
 
@@ -171,6 +180,18 @@
     state.filter = filterEl.value;
     renderRail();
     renderGrid();
+  });
+
+  searchEl.addEventListener('input', function () {
+  clearTimeout(searchDebounce);
+  var val = searchEl.value;
+  searchDebounce = setTimeout(function () {
+    state.query = val;
+    renderRail();
+    renderGrid();
+    window.BF.announce(
+      visiblePrompts().length + ' prompt' + (visiblePrompts().length === 1 ? '' : 's') + ' found');
+    }, 150);
   });
 
   window.addEventListener('hashchange', function () {

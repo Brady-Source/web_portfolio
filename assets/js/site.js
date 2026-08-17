@@ -1,21 +1,35 @@
 /* Shared site behavior: theme toggle, mobile nav, modal, helpers.
    No third-party scripts. All dynamic text uses textContent / DOM creation. */
 (function () {
-  'use strict';
+  "use strict";
 
   /* ---------- Safe localStorage (handles denial / private mode) ---------- */
   var store = {
-    get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
-    set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* ignore */ } }
+    get: function (k) {
+      try {
+        return window.localStorage.getItem(k);
+      } catch (e) {
+        return null;
+      }
+    },
+    set: function (k, v) {
+      try {
+        window.localStorage.setItem(k, v);
+      } catch (e) {
+        /* ignore */
+      }
+    },
   };
 
   /* ---------- Theme ---------- */
   var root = document.documentElement;
-  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
   function currentTheme() {
-    return root.getAttribute('data-theme') ||
-      (prefersDark.matches ? 'dark' : 'light');
+    return (
+      root.getAttribute("data-theme") ||
+      (prefersDark.matches ? "dark" : "light")
+    );
   }
 
   function sunIcon() {
@@ -26,74 +40,97 @@
   }
 
   function applyTheme(mode) {
-    root.setAttribute('data-theme', mode);
-    var btns = document.querySelectorAll('[data-theme-toggle]');
+    root.setAttribute("data-theme", mode);
+    var btns = document.querySelectorAll("[data-theme-toggle]");
     for (var i = 0; i < btns.length; i++) {
-      btns[i].innerHTML = mode === 'dark' ? sunIcon() : moonIcon();
-      btns[i].setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      btns[i].setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
+      btns[i].innerHTML = mode === "dark" ? sunIcon() : moonIcon();
+      btns[i].setAttribute(
+        "aria-label",
+        mode === "dark" ? "Switch to light mode" : "Switch to dark mode",
+      );
+      btns[i].setAttribute("aria-pressed", mode === "dark" ? "true" : "false");
     }
   }
 
   // Initialize theme: stored preference wins, else system.
-  var saved = store.get('bf-theme');
-  applyTheme(saved === 'light' || saved === 'dark' ? saved : (prefersDark.matches ? 'dark' : 'light'));
+  var saved = store.get("bf-theme");
+  applyTheme(
+    saved === "light" || saved === "dark"
+      ? saved
+      : prefersDark.matches
+        ? "dark"
+        : "light",
+  );
 
-  document.addEventListener('click', function (e) {
-    var toggle = e.target.closest && e.target.closest('[data-theme-toggle]');
+  document.addEventListener("click", function (e) {
+    var toggle = e.target.closest && e.target.closest("[data-theme-toggle]");
     if (!toggle) return;
-    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    var next = currentTheme() === "dark" ? "light" : "dark";
     applyTheme(next);
-    store.set('bf-theme', next);
+    store.set("bf-theme", next);
   });
 
   // If no stored preference, follow system changes live.
   if (prefersDark.addEventListener) {
-    prefersDark.addEventListener('change', function (ev) {
-      if (!store.get('bf-theme')) applyTheme(ev.matches ? 'dark' : 'light');
+    prefersDark.addEventListener("change", function (ev) {
+      if (!store.get("bf-theme")) applyTheme(ev.matches ? "dark" : "light");
     });
   }
 
   /* ---------- Mobile nav ---------- */
-  var navToggle = document.querySelector('[data-nav-toggle]');
-  var nav = document.getElementById('primary-nav');
+  var navToggle = document.querySelector("[data-nav-toggle]");
+  var nav = document.getElementById("primary-nav");
   if (navToggle && nav) {
     function setNav(open) {
       nav.hidden = !open;
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     }
     // Only collapse on small screens.
-    var mq = window.matchMedia('(max-width: 860px)');
-    function syncNav() { if (mq.matches) { setNav(false); } else { nav.hidden = false; navToggle.setAttribute('aria-expanded', 'false'); } }
+    var mq = window.matchMedia("(max-width: 860px)");
+    function syncNav() {
+      if (mq.matches) {
+        setNav(false);
+      } else {
+        nav.hidden = false;
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    }
     syncNav();
-    if (mq.addEventListener) mq.addEventListener('change', syncNav);
-    navToggle.addEventListener('click', function () {
+    if (mq.addEventListener) mq.addEventListener("change", syncNav);
+    navToggle.addEventListener("click", function () {
       setNav(nav.hidden);
     });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && mq.matches && !nav.hidden) { setNav(false); navToggle.focus(); }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mq.matches && !nav.hidden) {
+        setNav(false);
+        navToggle.focus();
+      }
     });
   }
 
   /* ---------- Toast / live region ---------- */
-  var toast = document.getElementById('toast');
+  var toast = document.getElementById("toast");
   var toastTimer = null;
   window.BF = window.BF || {};
   window.BF.announce = function (msg) {
     if (!toast) return;
     toast.textContent = msg;
-    toast.classList.add('is-visible');
+    toast.classList.add("is-visible");
     if (toastTimer) clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 2200);
+    toastTimer = setTimeout(function () {
+      toast.classList.remove("is-visible");
+    }, 2200);
   };
 
   /* ---------- Accessible modal ---------- */
   var lastFocused = null;
 
   function focusable(container) {
-    return Array.prototype.slice.call(container.querySelectorAll(
-      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
-    ));
+    return Array.prototype.slice.call(
+      container.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+      ),
+    );
   }
 
   window.BF.openModal = function (id) {
@@ -105,27 +142,40 @@
     if (f.length) f[0].focus();
 
     function onKey(e) {
-      if (e.key === 'Escape') { close(); return; }
-      if (e.key === 'Tab') {
+      if (e.key === "Escape") {
+        close();
+        return;
+      }
+      if (e.key === "Tab") {
         var items = focusable(modal);
         if (!items.length) return;
-        var first = items[0], last = items[items.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        var first = items[0],
+          last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     }
     function onClick(e) {
-      if (e.target === modal || (e.target.closest && e.target.closest('[data-modal-close]'))) close();
+      if (
+        e.target === modal ||
+        (e.target.closest && e.target.closest("[data-modal-close]"))
+      )
+        close();
     }
     function close() {
       modal.hidden = true;
-      document.removeEventListener('keydown', onKey, true);
-      modal.removeEventListener('click', onClick);
+      document.removeEventListener("keydown", onKey, true);
+      modal.removeEventListener("click", onClick);
       if (lastFocused && lastFocused.focus) lastFocused.focus();
     }
     modal._close = close;
-    document.addEventListener('keydown', onKey, true);
-    modal.addEventListener('click', onClick);
+    document.addEventListener("keydown", onKey, true);
+    modal.addEventListener("click", onClick);
   };
 
   window.BF.closeModal = function (id) {
@@ -135,26 +185,46 @@
 
   /* ---------- Helpers shared by page scripts ---------- */
   // Allowlist external URLs to a small set of trusted hosts.
-  window.BF.ALLOWED_HOSTS = ['github.com', 'www.github.com', 'linkedin.com', 'www.linkedin.com'];
+  window.BF.ALLOWED_HOSTS = [
+    "github.com",
+    "www.github.com",
+    "linkedin.com",
+    "www.linkedin.com",
+  ];
   window.BF.isSafeUrl = function (url) {
-    if (typeof url !== 'string' || !url) return false;
+    if (!url || typeof url !== "string") return false;
+
+    // Allow same-site relative paths
+    if (url.startsWith("/")) return true;
+
     try {
-      var u = new URL(url, window.location.href);
-      if (u.protocol !== 'https:' && u.protocol !== 'http:') return false;
-      return window.BF.ALLOWED_HOSTS.indexOf(u.hostname) !== -1;
-    } catch (e) { return false; }
+      var parsed = new URL(url, window.location.origin);
+
+      // Allow same-origin absolute URLs
+      if (parsed.origin === window.location.origin) return true;
+
+      return (
+        parsed.hostname === "github.com" ||
+        parsed.hostname === "www.github.com" ||
+        parsed.hostname === "linkedin.com" ||
+        parsed.hostname === "www.linkedin.com"
+      );
+    } catch (e) {
+      return false;
+    }
   };
 
   // Fetch JSON with basic error handling.
   window.BF.loadJSON = function (path) {
-    return fetch(path, { cache: 'no-cache' }).then(function (r) {
-      if (!r.ok) throw new Error('Failed to load ' + path + ' (' + r.status + ')');
+    return fetch(path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok)
+        throw new Error("Failed to load " + path + " (" + r.status + ")");
       return r.json();
     });
   };
 
   // Set footer year on every page (replaces the inline script blocked by CSP).
-  var yearEl = document.getElementById('year');
+  var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   // Create an element with textContent + optional attributes.
@@ -163,7 +233,11 @@
     opts = opts || {};
     if (opts.text != null) node.textContent = opts.text;
     if (opts.className) node.className = opts.className;
-    if (opts.attrs) { for (var k in opts.attrs) { if (opts.attrs.hasOwnProperty(k)) node.setAttribute(k, opts.attrs[k]); } }
+    if (opts.attrs) {
+      for (var k in opts.attrs) {
+        if (opts.attrs.hasOwnProperty(k)) node.setAttribute(k, opts.attrs[k]);
+      }
+    }
     return node;
   };
 })();

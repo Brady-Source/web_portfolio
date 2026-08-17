@@ -13,7 +13,7 @@ Open any page directly, or serve the folder with any static file server.
 | File             | Purpose                                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------------------ |
 | `index.html`     | Hero: name, title, one specific paragraph, and buttons to Portfolio, Prompts, How to Use Gen AI, Contact, GitHub, and LinkedIn. |
-| `portfolio.html` | Responsive left rail + category filter (Web / AI / Documentation), right detail panel, safe content viewers (image, PDF embed, non-editable scrollable doc summary), Code \| Demo toggle, and a demo-unavailable modal. |
+| `portfolio.html` | Responsive left rail + category filter (Web / AI / Documentation / Game), right detail panel, safe content viewers (image, PDF embed, non-editable scrollable doc summary), Code \| Demo toggle, and a demo-unavailable modal. |
 | `prompts.html`   | Prompt library across seven categories with sidebar filter, cards (title, author Brady, description, copy), an on-page detail view driven by the URL hash, **Copy Prompt**, and a disabled **Fill in Prompt — coming soon** control. |
 | `genai.html`     | Beginner-to-intermediate guide: Fundamentals, Personalize Your AI, Don’ts With AI, and a **Which Model Should I Use** table (placeholder rows only). |
 | `contact.html`   | Name / Subject / Email / Message form with client-side validation and static-service submission. **No email address is exposed anywhere in the markup.** |
@@ -44,8 +44,6 @@ web_portfolio_build/
 ---
 
 ## Design
-
-The design extends the brand tokens from the supplied `index-2.html`:
 
 - **Typeface:** Satoshi (self-hosted, see below), with a system-font fallback stack.
 - **Color:** warm light surfaces (`#f7f6f2` / `#f9f8f5`), a dark theme, and teal `#01696f`

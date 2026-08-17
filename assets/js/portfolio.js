@@ -216,16 +216,22 @@
   }
 
   function safeLinkButton(link, label, cls) {
-    // Returns an anchor if URL is safe, otherwise a demo-trigger button.
     if (link && link.url && window.BF.isSafeUrl(link.url)) {
+      var isInternal =
+        link.url.startsWith("/") ||
+        new URL(link.url, window.location.origin).origin ===
+          window.location.origin;
+
       var a = el("a", {
         text: label,
         className: cls,
-        attrs: { href: link.url, target: "_blank", rel: "noopener noreferrer" },
+        attrs: isInternal
+          ? { href: link.url }
+          : { href: link.url, target: "_blank", rel: "noopener noreferrer" },
       });
       return a;
     }
-    // No verified URL -> demo modal
+
     var btn = el("button", {
       text: label,
       className: cls,
@@ -273,8 +279,12 @@
     demoBtn.addEventListener("click", function () {
       demoBtn.setAttribute("aria-selected", "true");
       codeBtn.setAttribute("aria-selected", "false");
-      // Demo requires backend/database -> always the demo modal here.
-      window.BF.openModal("demo-modal");
+
+      if (demoLink && window.BF.isSafeUrl(demoLink.url)) {
+        window.open(demoLink.url, "_blank", "noopener");
+      } else {
+        window.BF.openModal("demo-modal");
+      }
     });
 
     group.appendChild(codeBtn);
@@ -364,16 +374,9 @@
           safeLinkButton(link, "View code on GitHub", "btn btn--primary"),
         );
       } else if (link.type === "demo") {
-        // Demo action always gated
-        var b = el("button", {
-          text: "Open live demo",
-          className: "btn btn--ghost",
-          attrs: { type: "button" },
-        });
-        b.addEventListener("click", function () {
-          window.BF.openModal("demo-modal");
-        });
-        linkRow.appendChild(b);
+        linkRow.appendChild(
+          safeLinkButton(link, "Open live demo", "btn btn--ghost"),
+        );
       } else {
         linkRow.appendChild(
           safeLinkButton(link, link.label || "Open link", "btn btn--ghost"),
@@ -411,7 +414,7 @@
     );
     box.appendChild(
       el("p", {
-        text: "Use the “Code” button to view the full source on GitHub. The “Demo” button demonstrates the demo-unavailable behavior described in the project brief.",
+        text: "Use the “Code” button to view the full source on GitHub or Demo to preview the application live (if available).",
       }),
     );
     wrap.appendChild(box);

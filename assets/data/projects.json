@@ -1,6 +1,57 @@
 {
-  "categories": ["Web", "AI", "Documentation", "Game"],
+  "categories": ["Web", "AI", "Documentation", "Game", "Certifications"],
   "projects": [
+    {
+      "id": "html-css",
+      "title": "HTML & CSS Certificate",
+      "category": "Certifications",
+      "tagline": "Trained and certified in HTML and CSS front-end web development. Built the Creative Portfolio site as the course final prior to certification.",
+      "viewer": "pdf",
+      "pdf": "assets/docs/HTML-CSS_Certification.PDF",
+      "links": [],
+      "tech": [
+        "HTML5",
+        "CSS3"
+      ],
+      "railTitle": "HTML & CSS"
+    },
+    {
+      "id": "eminencev2-portfolio",
+      "title": "HTML & CSS Certification Portfolio Site",
+      "category": "Web",
+      "tagline": "Click Demo to explore it live!",
+      "viewer": "codeDemo",
+      "links": [
+        {
+          "label": "Code",
+          "type": "code",
+          "url": null
+        },
+        {
+          "label": "Demo",
+          "type": "demo",
+          "url": "/demo_sites/html-css-certification-site/index.html"
+        }
+      ],
+      "tech": [
+        "HTML5",
+        "CSS3",
+        "Responsive design",
+        "Embedded media",
+        "Custom Branding",
+        "Custom navigation",
+        "Static site architecture"
+      ],
+      "description": "A hand-built portfolio website created as the final project for my HTML/CSS certification. The site presents older motion graphics, VFX, and digital design work through a modern single-page experience with custom navigation, embedded video, project sections, an about panel, and contact access. It was built without frameworks, making it a focused exercise in semantic structure, styling, layout control, and front-end presentation. ",
+      "highlights": [
+        "Built a complete static portfolio site using plain HTML and CSS with no frameworks",
+        "Created a branded landing page with hero content, navigation, and embedded video presentation",
+        "Structured project showcase sections for timelapse, motion graphics, and creative work samples",
+        "Implemented responsive layout behavior for navigation, content cards, and about/contact sections"
+      ],
+      "demoNote": "This project is a static front-end build intended to demonstrate HTML/CSS fundamentals and portfolio presentation. The featured media highlights earlier VFX and motion-design work, while the site itself reflects my recent front-end implementation skills.",
+      "railTitle": "Creative Portfolio"
+    },
     {
       "id": "rts-dqn-agents",
       "title": "RTS Multi-Agent Deep Q-Learning",

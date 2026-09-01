@@ -118,24 +118,6 @@ To fall back to the Fontshare CDN instead, remove the `@font-face` rules at the 
 
 ---
 
-
-**Excluded** (see `project-review.json` for reasons): tutorial/learning repos (Asteroids,
-blog, Flask_Tut, webflyx), the destination repo itself, time-sensitive LLM-analysis coursework,
-plan-only and prototype-only coursework, and general-education assignments.
-
-### Data / privacy note
-
-OneDrive search returned **zero indexed results** when attempted, so the uploaded project
-corpus was treated as the authoritative content source. Private uploaded-file URLs are **not**
-hotlinked. Only public-safe artifacts were copied into `assets/docs/`
-(the M2S design PDF, which is Brady’s own academic work with no personal/sensitive data).
-The project files list a separate “Database Diagram.pdf” that did not resolve on disk in the
-corpus, so ShopSphere is presented as a scrollable text summary rather than a fabricated
-embed. **Brady’s email address is intentionally excluded from all markup**; only the approved
-public GitHub and LinkedIn links appear.
-
----
-
 ## License
 
 MIT — see `LICENSE`.
